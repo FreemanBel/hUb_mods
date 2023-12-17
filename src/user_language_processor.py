@@ -24,7 +24,7 @@ __botlangcode__ = getBotLangCode()
 __botlangname__ = "Unknown"
 
 try:
-    lang = import_module("userbot.modules_user.translations." + __botlangcode__)
+    lang = import_module("userbot.modules_user." + __botlangcode__)
 except ModuleNotFoundError:  # Language file not found
     if not __botlangcode__ == "en":
         log.warning(f"'{__botlangcode__}' module language file not found. Make sure "
@@ -32,7 +32,7 @@ except ModuleNotFoundError:  # Language file not found
                     "config in your config file. Attempting to load default "
                     "language...")
         try:
-            lang = import_module("userbot.modules_user.translations.en")
+            lang = import_module("userbot.modules_user.en")
         except ModuleNotFoundError:
             log.error("Default module language file not found, bot quitting!")
             quit(1)
@@ -67,10 +67,10 @@ if hasattr(lang, "NAME"):
 log.info(f"Loading {__botlangname__} module language")
 
 try:
-    if lang.__name__ == "userbot.modules_user.translations.en":
+    if lang.__name__ == "userbot.modules_user.en":
         dlang = lang
     else:
-        dlang = import_module("userbot.modules_user.translations.en")
+        dlang = import_module("userbot.modules_user.en")
 except ModuleNotFoundError:
     log.error("Default module language file not found, bot quitting!")
     quit(1)

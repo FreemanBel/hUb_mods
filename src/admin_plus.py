@@ -8,9 +8,9 @@
 # compliance with the PE License
 
 from userbot.include.language_processor import AdminText as msgRep
-from userbot.modules_user.include.user_language_processor import (AdminText as msgRepPlus,
-                                                ModuleDescriptions as descRepPlus,
-                                                ModuleUsages as usageRepPlus)
+from userbot.modules_user.user_language_processor import (AdminText as msgRepPlus,
+                                                          ModuleDescriptions as descRepPlus,
+                                                          ModuleUsages as usageRepPlus)
 from userbot.sysutils.configuration import getConfig
 from userbot.sysutils.event_handler import EventHandler
 from userbot.sysutils.registration import (register_cmd_usage,
